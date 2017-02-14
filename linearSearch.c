@@ -1,16 +1,21 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 void main(int argc, char *argv[])
 {
+
+    FILE* inFile;
     double searchArray[20]; //create searchArray
     for (int i = 0; i < 20; i++)
     {
-        searchArray[i] = i+1; //fill up the array
+        searchArray[i] = i + 1; //fill up the array
     }
 
-    void introduction(){//introduction
-        printf( "This program reads number from a file called input.dat, reads the numbers." );
-    }//end of introduction
+    void introduction()
+    { //introduction
+        printf("This program reads number from a file called input.dat, reads the numbers.");
+    } //end of introduction
 
     void sort(double store[])
     {
@@ -46,8 +51,43 @@ void main(int argc, char *argv[])
 
     void display(double store[])
     {
-        for(int i =0; i<20){
-            printf("%d", store[i])
+        for (int i = 0; i < 20; i++)
+        {
+            printf("%f \n", store[i]);
+        }
+    } //end of display
+
+    void readInput(double store[])
+    {
+        int i = 0;
+        char fileName[100];
+
+        //get fileName
+        printf("Please input the filename: ");
+        scanf("%s", fileName);
+
+        //open the file
+        inFile = fopen(fileName, "r");
+        //just in case no file
+        if(inFile == 0){
+            printf("Error opening file");
+            exit(1);
+        }
+        char line[100][21];//array of strings length 100
+
+        //read content into searchArray
+        while (!feof(inFile))
+        {
+            fgets(line[i], 20, inFile);
+            sscanf(line[i], "%lf", &store[i]);
+
+            i++;
         }
     }
+
+    introduction();
+    readInput(searchArray);
+    sort(searchArray);
+    printf("The sorted numbers are as follows: ");
+    display(searchArray);
 }
