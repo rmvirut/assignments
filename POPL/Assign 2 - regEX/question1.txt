@@ -1,0 +1,16 @@
+key: [filename] = N
+	Questions have been sorted in the order they were asked on the assignment
+
+
+egrep '.{3}' N
+
+egrep '^c.{3}s$' N
+
+egrep -iv 'THIS' N
+
+egrep '\sHere\s' N | egrep -v 'There'
+
+egrep 'that.*this|this.*that' N | egrep -v 'the other thing'
+
+egrep '^[A-Z][a-zA-Z9-0]{7},[A-Z][a-zA-Z9-0]{7}$' N
+

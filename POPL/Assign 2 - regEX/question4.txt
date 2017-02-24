@@ -1,0 +1,6 @@
+<link> ::= http://<dir>
+<dir> ::= <sub>smu.ca<folder>
+<sub> ::= [www.|cs.|moodle.cs.]
+<folder> ::= <page> | <folder> | <word>
+<page> ::= <word>
+<word> ::= [A-Za-z0-9-/~?=]
