@@ -64,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
 
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
-        Friend ReadOnly Property Settings() As Global.The_Stop_Watch.My.MySettings
+        Friend ReadOnly Property Settings() As Global.stopwatch.My.MySettings
             Get
-                Return Global.The_Stop_Watch.My.MySettings.Default
+                Return Global.stopwatch.My.MySettings.Default
             End Get
         End Property
     End Module

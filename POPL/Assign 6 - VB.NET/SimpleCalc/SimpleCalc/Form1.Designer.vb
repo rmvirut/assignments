@@ -49,7 +49,9 @@ Partial Class Form1
         Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Default
         Me.TextBox1.Font = New System.Drawing.Font("Candara", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(8, 12)
+        Me.TextBox1.MaxLength = 30
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(240, 28)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -209,6 +211,7 @@ Partial Class Form1
         '
         'plus_or_minus
         '
+        Me.plus_or_minus.Enabled = False
         Me.plus_or_minus.Location = New System.Drawing.Point(132, 57)
         Me.plus_or_minus.Name = "plus_or_minus"
         Me.plus_or_minus.Size = New System.Drawing.Size(56, 23)

@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("The Stop Watch")>
+<Assembly: AssemblyTitle("stopwatch")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("The Stop Watch")>
+<Assembly: AssemblyProduct("stopwatch")>
 <Assembly: AssemblyCopyright("Copyright ©  2017")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("1a1c3c7b-3bbe-4c76-a147-6b559853fa54")>
+<Assembly: Guid("6cef6273-5aa7-4ee2-a07f-daf9ae88e9e0")>
 
 ' Version information for an assembly consists of the following four values:
 '

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF90FDD3-C055-47F4-9855-47D506D9C1C9}</ProjectGuid>
+    <ProjectGuid>{837D140F-842A-4727-B562-785DCDB632FF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>The_Stop_Watch.My.MyApplication</StartupObject>
-    <RootNamespace>The_Stop_Watch</RootNamespace>
-    <AssemblyName>The Stop Watch</AssemblyName>
+    <StartupObject>stopwatch.My.MyApplication</StartupObject>
+    <RootNamespace>stopwatch</RootNamespace>
+    <AssemblyName>stopwatch</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -21,7 +21,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>The Stop Watch.xml</DocumentationFile>
+    <DocumentationFile>stopwatch.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>The Stop Watch.xml</DocumentationFile>
+    <DocumentationFile>stopwatch.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
