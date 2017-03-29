@@ -1,0 +1,11 @@
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\bin\Debug\stopwatch.exe.config
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\obj\Debug\stopwatch.vbprojResolveAssemblyReference.cache
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\obj\Debug\stopwatch.Form1.resources
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\obj\Debug\stopwatch.Resources.resources
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\obj\Debug\stopwatch.vbproj.GenerateResource.Cache
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\obj\Debug\stopwatch.xml
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\bin\Debug\stopwatch.exe
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\bin\Debug\stopwatch.pdb
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\bin\Debug\stopwatch.xml
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\obj\Debug\stopwatch.exe
+C:\Users\Kojo\Projects\assignments\POPL\Assign 6 - VB.NET\The Stop Watch\stopwatch\obj\Debug\stopwatch.pdb
