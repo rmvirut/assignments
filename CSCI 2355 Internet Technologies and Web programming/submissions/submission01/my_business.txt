@@ -38,7 +38,7 @@ Website and Web App Development
 Mobile Applications Development
   - Cross-platform applications
   - iOS Native applications
-    - Android native applications
+  - Android native applications
 Business IT Infrastructure
   - Office and Administration
     - Office Collaboration
@@ -68,8 +68,7 @@ Repair Center
 Our Reason
 ==========
 
-    Since the turn of the 21st Century, technology has rapidly become vital to our 
-individual lives. More importantly, it's become critical to anyone looking to 
+    Since the turn of the 21st Century, technology has rapidly become vital to our individual lives. More importantly, it's become critical to anyone looking to 
 succeed in business. All aspects of day-to-day business including payments, 
 accounting, content management, inventory, HR management, marketing, email and 
 networking, communication (etc.) systems have become entirely software-based.
@@ -97,14 +96,13 @@ running an open-source dependent IT company off the ground, but I could make it
 part of school and get some advice from my professor who was an experienced 
 entrepreneur.
 
-    I did my research, drew up a business plan and got my 2-day venture running on
-September 26, 2016 but started it off as a PC repair company.
+    I did my research, drew up a business plan and got my 2-day venture running on September 26, 2016 but started it off as a PC repair company.
 
-    The idea that led to Diji Domain was put to the test; Starting and operating a 
+    The idea that led to Diji Domain was put to the test; Starting and operating a
 small business with no capital for IT. Long story short, I didn’t even need the $1
-investment in the end, got an A+ on the course and, if you’re reading this, kept 
+investment in the end, got an A+ on the course and, if you’re reading this, kept
 the business running beyond the two days it was required to operate. I’ve managed
-to start an entire company using 0$. Since then we’ve (now a team of four) worked 
+to start an entire company using 0$. Since then we’ve (now a team of four) worked
 with clients from all walks of life and several industries.
 
     More hands also mean we’ve increased our talent pool, especially, in website 
@@ -117,7 +115,7 @@ medium businesses within [and without] the Maritimes for a long time to come.
     
     Thanks for your time and we hope to get the chance to work with you.
 
-                                               – Kojo Acquah, Founder and Manager
+                                               - Kojo Acquah, Founder and Manager
 
 
 Our Values
