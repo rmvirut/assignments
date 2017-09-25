@@ -31,9 +31,14 @@ public class SimpleShell {
             ProcessBuilder psBuilder = new ProcessBuilder(cmdList);
             try {
                 Process ps = psBuilder.start();
-                OutputStream ou = ps.getOutputStream();
-                PrintStream pr = new PrintStream(ou);
-                pr.println();
+                InputStream is = ps.getInputStream();
+                InputStreamReader isr = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(isr);
+
+                String psOutput;
+                while((psOutput = br.readLine()) != null){
+                    System.out.println(psOutput);
+                }
             } catch (IOException e) {
                 System.out.println("You entered an invalid command");
             }
