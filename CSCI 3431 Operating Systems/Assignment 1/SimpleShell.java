@@ -7,11 +7,11 @@ public class SimpleShell {
 
     public static final File HOME_DIRECTORY = new File(System.getProperty("user.dir"));
     public static File CURRENT_DIRECTORY = new File(System.getProperty("user.dir"));
+    public static ArrayList<ArrayList> history = new ArrayList<>();
 
     public static void main(String[] args) throws java.io.IOException {
         String commandLine;
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<ArrayList> history = new ArrayList<>();//keeps record of commands
 
         // we break out with <control><C>
         while (true) {
@@ -24,7 +24,9 @@ public class SimpleShell {
                 continue;
             }
 
+            //split command into arrays
             ArrayList<String> cmdList = new ArrayList<>(Arrays.asList(commandLine.split(" ")));
+
             boolean closeShell = cmdList.get(0).equalsIgnoreCase("exit") || cmdList.get(0).equalsIgnoreCase("quit");
 
             // close program if quit/exit is entered
@@ -35,8 +37,10 @@ public class SimpleShell {
 
             //add command and params to the history
             history.add(cmdList);
+
             if (cmdList.get(0).equals("history")) {
-                cmdList = viewHistory(history);
+                //execute sub-program for history
+                cmdList = viewHistory(history, console);
             }
 
             //check for "cd" command
@@ -88,9 +92,17 @@ public class SimpleShell {
         return CURRENT_DIRECTORY;
     }
 
-    public static ArrayList<String> viewHistory(ArrayList<T> list) {
-        list.forEach(cmd -> System.out.println(cmd.toString()));
-        
-        return list.get(0);
+    public static ArrayList<String> viewHistory(ArrayList<ArrayList> history, BufferedReader console) throws IOException{
+        history.forEach(cmd -> System.out.println(cmd.toString().replaceAll(",+[+]", " ")));
+        System.out.print("jsh>");
+        String choice = console.readLine();
+        if (choice.matches("[0-9]*")) {
+            //if the choice was a number then pick comman from the history
+            return history.get(Integer.parseInt(choice));
+        } else {
+            //add the command to history and return to original program
+             history.add((ArrayList<String>)Arrays.asList(choice.split(" ")));
+             return history.get(history.size());
+        }
     }
 }
