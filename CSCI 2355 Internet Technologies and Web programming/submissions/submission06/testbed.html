@@ -2,107 +2,160 @@
 <!--document_head.html-->
 <html lang="en">
 
-	<head>
-		<title>Diji Domain</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <base href="http://cs.smu.ca/cs35502/submission05/"> -->
-		<link rel="stylesheet" href="./css/desktop.css" />
-	</head>
+<head>
+    <title>Diji Domain</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <base href="http://cs.smu.ca/cs35502/submission05/"> -->
+    <link rel="stylesheet" href="./css/desktop.css" />
+</head>
 
-	<body>
-		<!--logo_row.html-->
-		<header>
-			<img class="page-banner" src="./images/banner.png" alt="diji domain company banner"
-			/>
-			<nav id="navbar">
-				<ul>
-					<li class="nav-item"><a href="my_business2.html">Home</a></li>
-					<li class="nav-item"><a href="./pages/services.html">Services</a></li>
-					<li class="nav-item"><a href="./pages/software.html">Software</a></li>
-					<li class="nav-item"><a href="./pages/your-business.html">Your Business</a></li>
-					<li class="nav-item"><a href="./pages/about-us.html">About Us</a></li>
-					<li class="nav-item"><a href="./pages/contact-us.html">Contact Us</a></li>
-					<li class="nav-item"><a href="./pages/sitemap.html">Site Map</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<aside class="sidebar">
-				<nav>
-					<ul>
-						<li class="nav-item sidebar-item"><a href="./pages/contact-us.html">Contact Us</a></li>
-						<li class="nav-item sidebar-item"><a href="./pages/locations.html">Locations</a></li>
-					</ul>
-				</nav>
-			</aside>
-			<article class="article-w-sidebar">
-				<div id="text">
-					<h1 class="page-title">Feedback Form</h1>
-					<div class="form-container">
-						<form id="feedback-form">
-							<div class="form-field">
-								<label for="user">Name:</label>
-								<input name="user" id="username" type="text" placeholder="Name..." required />
-							</div>
-							<div class="form-field">
-								<label for="email">Email:</label>
-								<input name="email" type="email" id="email" placeholder="Email address" required
-								/>
-							</div>
-							<div class="form-field">
-								<label for="company_name">Company Name:</label>
-								<input name="company_name" type="text" id="com_name" placeholder="Name of your business"
-								/>
-							</div>
-							<div class="form-field">
-								<label name="subject">Subject:</label>
-								<select id="subject">
-										<option id="opt1">Service Feedback</option>
-										<option id="opt2">Technical Support</option>
-										<option id="opt3">Submit Query</option>
-										<option id="opt4">Other...</option>
-									</select>
-							</div>
-							<div class="form-field">
-								<textarea name="message" id="msg" rows="15" cols="50">
-										Message here
-										</textarea>
-							</div>
-						</form>
-					</div>
-				</div>
-			</article>
-		</main>
-		<footer>
-			<span id="copyright">Diji Domain &copy; 2017 Kojo Acquah</span>
-		</footer>
-		<style>
-			#feedback-form {
-				/*border: blue 1px dashed;*/
-				display: block;
-				margin: auto;
-				min-width: 100%;
-			}
+<body>
+    <!--logo_row.html-->
+    <header>
+        <img class="page-banner" src="./images/banner.png" alt="diji domain company banner" />
+        <nav id="navbar">
+            <ul>
+                <li class="nav-item">
+                    <a href="my_business.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./pages/services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./pages/software.html">Software</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./pages/your-business.html">Your Business</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./pages/about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./pages/contact-us.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./pages/sitemap.html">Site Map</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li class="nav-item sidebar-item">
+                        <a href="./pages/contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item sidebar-item">
+                        <a href="./pages/locations.html">Locations</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <article class="article-w-sidebar">
+            <div id="text">
+                <h1 class="page-title">Service Request Form</h1>
+                <p>To request a service from Diji Domain for you home or company, simply complete the form below and submit it. An agent will get in touch with you soon.</p>
+                <div class="form-container">
+                    <form id="service-request-form">
+                        <p>I'm a/an</p>
+                        <div class="form-field">
+                            <input type="radio" id="company" name="contact" value="email">
+                            <label for="company">Company</label>
+                            <input type="radio" id="individual" name="contact" value="phone">
+                            <label for="individual">Individual</label>
+                        </div>
+                        <fieldset>
+                            <legend>Company Information</legend>
+                            <div class="form-field">
+                                <label for="company_name">Company Name:</label>
+                                <input name="company_name" type="text" id="com_name" placeholder="Name of your business" />
+                            </div>
+                            <div class="form-field">
+                                <label for="industry">Industry:</label>
+                                <select name="industry">
+																<option></option>
+																<option>Accommodation &amp; Food Services</option>
+																<option>Agriculture</option>
+																<option>Construction &amp; Real Estate</option>
+																<option>Consultation &amp; Professional Services</option>
+																<option>Culture &amp; Leisure</option>
+																<option>Education</option>
+																<option>Energy</option>
+																<option>Beauty and Health Care</option>
+																<option>Information &amp; Communications Technology</option>
+																<option>Manufacturing</option>
+																<option>Natural Resources</option>
+																<option>Retail &amp; Wholesale</option>
+																<option>Science and Technology</option>
+																<option>Storage &amp; Transportation</option>
+																<option>Travel and Tourism</option>
+														</select>
+                            </div>
+                            <div class="form-field">
+                                <label for="c-tel">Phone: </label>
+                                <input name="c-tel" type="tel" id="company_phone" placeholder="Company phone number..." />
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email:</label>
+                                <input name="email" type="email" id="email" placeholder="Email address" required />
+                            </div>
+                            <div class="form-field">
+                                <label for="street-address">Street Address: </label>
+                                <input type="text" id="company-address" name="street-address" placeholder="Street address..." />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <div class="form-field">
+                                <label>Salutation: </label>
+                                <select name="salute">
+																	<option>&nbsp;</option>
+																	<option>Mrs.</option>
+																	<option>Ms.</option>
+																	<option>Mr.</option>
+																</select>
+                            </div>
+                            <div class="form-field">
+                                <label for="user">Name:</label>
+                                <input name="user" id="username" type="text" placeholder="Name..." required />
+                            </div>
+                            <div class="form-field">
+                                <label for="u-tel">Phone</label>
+                                <input type="tel" name="u-tel" id="user-phone" placeholder="Contact phone number..." />
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email:</label>
+                                <input name="email" type="email" id="email" placeholder="Email address" required />
+                            </div>
+                        </fieldset>
 
-			.form-field {
-				display: flex;
-				padding: 5px;
-				margin: 5px;
-				border-bottom: 1px solid gray;
-			}
+                        <fieldset>
+                            <legend>Message</legend>
+                            <div class="form-field">
+                                <label for="user">Subject:</label>
+                                <input name="user" id="username" type="text" placeholder="Subject" required />
+                            </div>
+                            <div class="form-field">
+                                <label for="message">Comment:</label>
+                                <textarea name="message" id="msg" rows="15" cols="50"></textarea>
+                            </div>
+                        </fieldset>
+                        <div>
+                            <input type="submit" name="Submit Form" class="submit btn" />
+                            <input type="reset" name="Reset Fields" class="reset btn" />
+                        </div>
 
-			label {
-				display: inline-flex;
-				min-width: 33.33%;
-			}
-
-			input {
-				display: inline-flex;
-				width: calc(100% - 33.33%);
-				border: none;
-			}
-		</style>
-	</body>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </main>
+    </article>
+    <footer>
+        <span id="copyright">Diji Domain &copy; 2017 Kojo Acquah</span>
+    </footer>
+</body>
 
 </html>

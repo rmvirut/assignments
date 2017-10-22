@@ -1,8 +1,11 @@
 /* Global attributes*/
 
+* {
+    font-family: 'Roboto', 'Oswald', 'Open Sans', sans-serif;
+}
+
 body {
     max-width: 60%;
-    font-family: Signika, Roboto, sans-serif;
     color: #292f33;
     margin: auto;
     /* border: solid 2px #096da4; */
@@ -156,4 +159,80 @@ footer {
 .dl-bold dt {
     font-weight: bold;
     line-height: 2em;
+}
+
+
+/* Forms */
+
+#form-container {
+    min-width: 100%;
+}
+
+#feedback-form,
+#service-request-form {
+    /*border: blue 1px dashed;*/
+    display: inline-block;
+    margin: auto;
+    min-width: 100%;
+}
+
+.form-field {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+}
+
+label {
+    display: inline-flex;
+    min-width: 33.33%;
+}
+
+input,
+select {
+    display: inline-flex;
+    width: calc(100% - 33.33%);
+    border: none;
+    border-bottom: 1px #1e1e1e solid;
+    font-size: 1em;
+}
+
+fieldset {
+    margin-top: 1em;
+}
+
+.btn {
+    padding: 1em;
+    margin: 0.5em;
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #1e1e1e;
+    color: #dddddd;
+    font-size: 100%;
+    font-style: italic;
+}
+
+.form-field .checkbox ul {
+    display: inline-block;
+    width: 100%;
+}
+
+.form-field .checkbox {
+    display: inline-block;
+    width: 48%;
+    border: 1px red solid;
+}
+
+.checkbox label {
+    display: inline-block;
+    width: auto;
+}
+
+.checkbox input {
+    width: 10%;
 }
