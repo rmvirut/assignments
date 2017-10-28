@@ -171,7 +171,7 @@ footer {
 #feedback-form,
 #service-request-form {
     /*border: blue 1px dashed;*/
-    display: block;
+    display: inline-block;
     margin: auto;
     min-width: 100%;
 }
@@ -215,4 +215,24 @@ fieldset {
     color: #dddddd;
     font-size: 100%;
     font-style: italic;
+}
+
+.form-field .checkbox ul {
+    display: inline-block;
+    width: 100%;
+}
+
+.form-field .checkbox {
+    display: inline-block;
+    width: 48%;
+    border: 1px red solid;
+}
+
+.checkbox label {
+    display: inline-block;
+    width: auto;
+}
+
+.checkbox input {
+    width: 10%;
 }

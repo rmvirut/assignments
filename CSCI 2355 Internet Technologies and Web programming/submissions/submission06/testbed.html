@@ -55,18 +55,17 @@
         </aside>
         <article class="article-w-sidebar">
             <div id="text">
-                <h1 class="page-title">Feedback Form</h1>
+                <h1 class="page-title">Service Request Form</h1>
+                <p>To request a service from Diji Domain for you home or company, simply complete the form below and submit it. An agent will get in touch with you soon.</p>
                 <div class="form-container">
-                    <form id="feedback-form">
-                        <p>I'm a</p>
+                    <form id="service-request-form">
+                        <p>I'm a/an</p>
                         <div class="form-field">
                             <input type="radio" id="company" name="contact" value="email">
                             <label for="company">Company</label>
-
                             <input type="radio" id="individual" name="contact" value="phone">
-                            <label for="individual">Phone</label>
+                            <label for="individual">Individual</label>
                         </div>
-
                         <fieldset>
                             <legend>Company Information</legend>
                             <div class="form-field">
@@ -74,8 +73,33 @@
                                 <input name="company_name" type="text" id="com_name" placeholder="Name of your business" />
                             </div>
                             <div class="form-field">
+                                <label for="industry">Industry:</label>
+                                <select name="industry">
+																<option></option>
+																<option>Accommodation &amp; Food Services</option>
+																<option>Agriculture</option>
+																<option>Construction &amp; Real Estate</option>
+																<option>Consultation &amp; Professional Services</option>
+																<option>Culture &amp; Leisure</option>
+																<option>Education</option>
+																<option>Energy</option>
+																<option>Beauty and Health Care</option>
+																<option>Information &amp; Communications Technology</option>
+																<option>Manufacturing</option>
+																<option>Natural Resources</option>
+																<option>Retail &amp; Wholesale</option>
+																<option>Science and Technology</option>
+																<option>Storage &amp; Transportation</option>
+																<option>Travel and Tourism</option>
+														</select>
+                            </div>
+                            <div class="form-field">
                                 <label for="c-tel">Phone: </label>
                                 <input name="c-tel" type="tel" id="company_phone" placeholder="Company phone number..." />
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email:</label>
+                                <input name="email" type="email" id="email" placeholder="Email address" required />
                             </div>
                             <div class="form-field">
                                 <label for="street-address">Street Address: </label>
@@ -87,11 +111,11 @@
                             <div class="form-field">
                                 <label>Salutation: </label>
                                 <select name="salute">
-										<option>&nbsp;</option>
-										<option>Mrs.</option>
-										<option>Ms.</option>
-										<option>Mr.</option>
-									</select>
+																	<option>&nbsp;</option>
+																	<option>Mrs.</option>
+																	<option>Ms.</option>
+																	<option>Mr.</option>
+																</select>
                             </div>
                             <div class="form-field">
                                 <label for="user">Name:</label>
@@ -105,23 +129,24 @@
                                 <label for="email">Email:</label>
                                 <input name="email" type="email" id="email" placeholder="Email address" required />
                             </div>
-                            <div class="form-field">
-                                <label name="subject">Subject:</label>
-                                <select id="subject">
-										<option id="opt1">Service Feedback</option>
-										<option id="opt2">Technical Support</option>
-										<option id="opt3">Submit Query</option>
-										<option id="opt4">Other...</option>
-									</select>
-                            </div>
-                            <h5>Comment</h5>
-                            <textarea name="message" id="msg" rows="15" cols="50"></textarea>
+                        </fieldset>
 
+                        <fieldset>
+                            <legend>Message</legend>
+                            <div class="form-field">
+                                <label for="user">Subject:</label>
+                                <input name="user" id="username" type="text" placeholder="Subject" required />
+                            </div>
+                            <div class="form-field">
+                                <label for="message">Comment:</label>
+                                <textarea name="message" id="msg" rows="15" cols="50"></textarea>
+                            </div>
                         </fieldset>
                         <div>
                             <input type="submit" name="Submit Form" class="submit btn" />
                             <input type="reset" name="Reset Fields" class="reset btn" />
                         </div>
+
                     </form>
                 </div>
             </div>
