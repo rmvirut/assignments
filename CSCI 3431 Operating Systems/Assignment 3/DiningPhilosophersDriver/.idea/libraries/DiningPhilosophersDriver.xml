@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DiningPhilosophersDriver">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/DiningPhilosophersDriver.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
