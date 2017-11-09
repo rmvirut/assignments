@@ -21,8 +21,4 @@ past you in the waiting queue more than once.
 
 Case 4: Is there a deadlock?
 
-No. No deadlocks were observed during testing and before submission of the work.
-
-Screen shots
-============
-There is a pdf file included in the files with a sample output of the program
+No. No deadlocks were observed during testing and before submission.
