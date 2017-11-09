@@ -21,4 +21,15 @@ past you in the waiting queue more than once.
 
 Case 4: Is there a deadlock?
 
-No. No deadlocks were observed during testing and before submission.
+No. No deadlocks were observed during testing and before submission of the work.
+
+Case 5: Can any pair of adjacent philosophers be found eating at the same time?
+
+Edit code to cause all other philosophers besides 0 and 1 to pause and leave the two such that they have to share the fork between them
+and P0's left fork is also P1's right fork.
+During testing, there was never a case where the fork was being used by both Philosophers and no one went ahead of the other.
+
+
+Screen shots
+============
+There is a pdf file included in the files with a sample output of the program

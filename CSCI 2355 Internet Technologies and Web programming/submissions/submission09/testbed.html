@@ -1,0 +1,122 @@
+<!DOCTYPE html5>
+<!--document_head.html-->
+<html lang="en">
+
+<head>
+	<title>Diji Domain</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <base href="http://cs.smu.ca/cs35502/submission05/"> -->
+	<link rel="stylesheet" href="./css/desktop.css" />
+
+</head>
+
+<body>
+	<!--logo_row.html-->
+	<header>
+		<img class="page-banner" src="./images/banner.png" alt="diji domain company banner" />
+		<nav id="navbar">
+			<ul>
+				<li class="nav-item">
+					<a href="my_business.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="./pages/services.html">Services</a>
+				</li>
+				<li class="nav-item">
+					<a href="./pages/software.html">Software</a>
+				</li>
+				<li class="nav-item">
+					<a href="./pages/your-business.html">Your Business</a>
+				</li>
+				<li class="nav-item">
+					<a href="./pages/about-us.html">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a href="./pages/contact-us.html">Contact Us</a>
+				</li>
+				<li class="nav-item">
+					<a href="./pages/sitemap.html">Site Map</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<aside class="sidebar">
+			<nav>
+				<ul>
+					<li class="nav-item sidebar-item">
+						<a href="./pages/contact-us.html">Contact Us</a>
+					</li>
+					<li class="nav-item sidebar-item">
+						<a href="./pages/locations.html">Locations</a>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<article class="article-w-sidebar">
+			<div id="text">
+				<h1 class="page-title">Service Request Form</h1>
+				<p>To request a service from Diji Domain for you home or company, simply complete the form below and submit it. An agent will get in touch with you soon.</p>
+
+				<div class="form-container">
+					<form id="service-request-form">
+						<fieldset id="contact_info">
+							<legend>Contact Information</legend>
+							<div class="form-field">
+								<label for="salute">Salutation: </label>
+								<select name="salute" id="salute">
+									<option>&nbsp;</option>
+									<option>Mrs.</option>
+									<option>Ms.</option>
+									<option>Mr.</option>
+								</select>
+							</div>
+							<div class="form-field">
+								<label for="username">Name:</label>
+								<input name="user" id="username" type="text" placeholder="Name..." required />
+							</div>
+							<div class="form-field">
+								<label for="role">Role/Title:</label>
+								<input name="role" id="role" type="text" placeholder="Role/Title (optional)..." required />
+							</div>
+							<div class="form-field">
+								<label for="userphone">Phone:</label>
+								<input type="tel" name="u-tel" id="userphone" pattern="^\d{4}-\d{3}-\d{4}$" placeholder="Contact phone number..." />
+							</div>
+							<div class="form-field">
+								<label for="useremail">Email:</label>
+								<input name="email" type="email" id="useremail" pattern='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/' placeholder="Email address" required />
+							</div>
+							<div class="form-field">
+								<label for="com_name">Company Name:</label>
+								<input name="company name" type="text" id="com-name" placeholder="Name of your business" required/>
+							</div>
+							<div class="form-field">
+								<label for="com-website">Website:</label>
+								<input type="text" id="com-website" name="com-website" placeholder="optional" />
+							</div>
+						</fieldset>
+						<fieldset id="service-info">
+							<legend>Message/Comment</legend>
+							<div class="form-field">
+								<textarea name="message" id="msg" rows="15" cols="50"></textarea>
+							</div>
+						</fieldset>
+						<div>
+							<input type="submit" name="Submit Form" class="submit btn" />
+							<input type="reset" name="Reset Fields" class="reset btn" />
+						</div>
+					</form>
+				</div>
+				
+			</div>
+		</article>
+	</main>
+	<footer>
+		<span id="copyright">Diji Domain &copy; 2017 Kojo Acquah</span>
+	</footer>
+	<script src="./scripts/forms.js"></script>
+</body>
+
+</html>
