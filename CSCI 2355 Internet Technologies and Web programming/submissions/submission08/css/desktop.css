@@ -72,12 +72,23 @@ nav ul li {
 /* main */
 
 main {
+<<<<<<< Updated upstream
     display: flex;
 }
 
 .article-w-sidebar {
     display: inline-flex;
     width: 80%;
+=======
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    padding: 1em 1em;
+}
+
+.article-w-sidebar {
+    width: 100%;
+>>>>>>> Stashed changes
 }
 
 
@@ -94,7 +105,11 @@ footer {
 /* sidebar */
 
 .sidebar {
+<<<<<<< Updated upstream
     display: inline-block;
+=======
+    display: none;
+>>>>>>> Stashed changes
     width: 19.33%;
     height: auto;
 }
@@ -199,8 +214,14 @@ select {
 fieldset {
     margin-top: 1em;
 }
+<<<<<<< Updated upstream
 legend {
 	font-weight: 600;
+=======
+
+legend {
+    font-weight: 600;
+>>>>>>> Stashed changes
 }
 
 .btn {
@@ -240,15 +261,26 @@ legend {
     width: 10%;
 }
 
+<<<<<<< Updated upstream
 #packs, #add-services ul {
     list-style: none;
 }
 
 #packs input, #add-services input {
+=======
+#packs,
+#add-services ul {
+    list-style: none;
+}
+
+#packs input,
+#add-services input {
+>>>>>>> Stashed changes
     width: auto;
 }
 
 #add-services {
+<<<<<<< Updated upstream
   display: table;
 	margin: auto;
 	width: 100%;
@@ -268,3 +300,79 @@ legend {
 	padding: 5px;
 }
 
+=======
+    display: table;
+    margin: auto;
+    width: 100%;
+}
+
+#add-services div {
+    display: table-row;
+}
+
+#add-services div ul {
+    display: table-cell;
+    width: auto;
+    padding: 15px 0px;
+}
+
+#add-services li {
+    padding: 5px;
+}
+
+
+/* new navbar */
+
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+nav li {
+    display: inline;
+    list-style: none;
+    width: 100%;
+    background-color: #3498db;
+    margin: 0px 2px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    z-index: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.sub-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sub-menu li {
+    display: flex;
+    align-content: left;
+    background-color: #b20000;
+    z-index: 3;
+    width: inherit;
+    padding: 5px;
+    margin: 1px;
+}
+
+.sub-menu li:hover {
+    background-color: #ff3232;
+    font: italic 1em serif;
+}
+
+#slider {
+    height: inherit;
+    width: inherit;
+}
+>>>>>>> Stashed changes
