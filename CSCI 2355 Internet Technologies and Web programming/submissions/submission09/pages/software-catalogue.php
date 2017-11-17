@@ -1,13 +1,18 @@
-<!--#include virtual="../common/document_head.html"-->
+<?php
+    include("../common/document_head.html")
+?>
 
-<body>
-    <!--#include virtual="../common/header.html" -->
+	<body>
+
+		<?php
+    include("../common/header.html")
+?>
     <main>
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li class="nav-item sidebar-item"><a href="./pages/services.html">Services</a></li>
-                    <li class="nav-item sidebar-item"><a href="./pages/dijidevs.html">Diji Devs</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/services.php">Services</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/dijidevs.php">Diji Devs</a></li>
                 </ul>
             </nav>
         </aside>
@@ -18,7 +23,9 @@
             </div>
         </article>
     </main>
-    <!--#include virtual="../common/footer.html"-->
+    <?php
+			include("../common/footer.html")
+			?>
 </body>
 
 </html>

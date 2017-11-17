@@ -94,7 +94,7 @@ footer {
 /* sidebar */
 
 .sidebar {
-    display: inline-block;
+    display: none;
     width: 19.33%;
     height: auto;
 }

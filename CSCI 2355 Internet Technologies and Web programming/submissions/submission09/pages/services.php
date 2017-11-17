@@ -1,13 +1,17 @@
-<!--#include virtual="../common/document_head.html"-->
+<?php
+    include("../common/document_head.html")
+?>
 
 <body>
-    <!--#include virtual="../common/header.html" -->
+   	<?php
+    include("../common/header.html")
+?>
     <main>
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li class="nav-item sidebar-item"><a href="./pages/software-catalogue.html">Software Catalogue</a></li>
-                    <li class="nav-item sidebar-item"><a href="./pages/dijidevs.html">Diji Devs</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/software-catalogue.php">Software Catalogue</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/dijidevs.php">Diji Devs</a></li>
                 </ul>
             </nav>
         </aside>
@@ -98,7 +102,9 @@
         </article>
     </main>
     <!--end product and services-->
-    <!--#include virtual="../common/footer.html"-->
+    <?php
+			include("../common/footer.html")
+			?>
 </body>
 
 </html>

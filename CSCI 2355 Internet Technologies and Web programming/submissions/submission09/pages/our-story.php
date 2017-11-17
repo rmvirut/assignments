@@ -1,14 +1,18 @@
-<!--#include virtual="../common/document_head.html"-->
+<?php
+    include("../common/document_head.html")
+?>
 
 <body>
-    <!--#include virtual="../common/header.html" -->
+    	<?php
+    include("../common/header.html")
+?>
     <main>
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li class="nav-item sidebar-item"><a href="./pages/about-us.html">About us</a></li>
-                    <li class="nav-item sidebar-item"><a href="./pages/our-values.html">Our Values</a></li>
-                    <li class="nav-item sidebar-item"><a href="./pages/faq.html">FAQ</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/about-us.php">About us</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/our-values.php">Our Values</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/faq.php">FAQ</a></li>
                 </ul>
             </nav>
         </aside>
@@ -51,7 +55,9 @@
             </div>
         </article>
     </main>
-    <!--#include virtual="../common/footer.html"-->
+    <?php
+			include("../common/footer.html")
+			?>
 </body>
 
 </html>

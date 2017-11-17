@@ -1,14 +1,18 @@
-<!--#include virtual="../common/document_head.html"-->
+<?php
+    include("../common/document_head.html")
+?>
 
 <body>
-    <!--#include virtual="../common/header.html" -->
+    	<?php
+    include("../common/header.html")
+?>
     <main>
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li class="nav-item sidebar-item"><a href="./pages/about-us.html">About Us</a></li>
-                    <li class="nav-item sidebar-item"><a href="./pages/our-story.html">Our Story</a></li>
-                    <li class="nav-item sidebar-item"><a href="./pages/our-values.html">Our Mission &amp; Values</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/about-us.php">About Us</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/our-story.php">Our Story</a></li>
+                    <li class="nav-item sidebar-item"><a href="./pages/our-values.php">Our Mission &amp; Values</a></li>
                 </ul>
             </nav>
         </aside>
@@ -34,7 +38,7 @@
                     </dd>
                     <dt>How do I know if there's an opensource solution to the challenge my business faces?</dt>
                     <dd>
-                        You can visit our <a href="./pages/software-catalogue.html">software catalogue page</a> to view all the programs we work with. We've devided them into sub-sections according to the business environment so you can narrow down your
+                        You can visit our <a href="./pages/software-catalogue.php">software catalogue page</a> to view all the programs we work with. We've devided them into sub-sections according to the business environment so you can narrow down your
                         search.
                     </dd>
                 </dl>
@@ -60,7 +64,9 @@
             </div>
         </article>
     </main>
-    <!--#include virtual="../common/footer.html"-->
+    <?php
+			include("../common/footer.html")
+			?>
 </body>
 
 </html>
