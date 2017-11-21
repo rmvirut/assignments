@@ -1,0 +1,17 @@
+//returns true if X is composite and false otherwise
+public static boolean FTest(BigInteger X){
+    //Theorem: 2^n-1 = 1 mod n
+    BigInteger TWO = new BigInteger.valueOf(2);
+    BigInteger ferm = TWO.pow(X.intValue()-1);
+    return ferm.mod(X)== BigInteger.ONE;
+}
+
+//could not complete method
+public static BigInteger sqRoot(BigInteger N) {
+    // returns the square root of N, if the root is an integer, or -1.
+    BigInteger upperBound = new BigInteger(val);
+    BigInteger lowerBound = new BigInteger();
+    
+
+    return new BigInteger.ZERO;
+}   
