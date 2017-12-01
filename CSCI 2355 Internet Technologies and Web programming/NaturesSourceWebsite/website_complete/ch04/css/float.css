@@ -1,0 +1,30 @@
+/* float.css for float.html */
+
+body { font-size: 1.5em; }
+
+div#page {
+  width: 650px;
+  background-color: silver;
+}
+
+div#header {
+  width: 100%;
+  background-color: aqua;
+}
+
+div#menu {
+  float: left;
+  width: 35%;
+  background-color: lime;
+}
+
+div#content {
+  float: left;
+  width: 65%;
+}
+
+div#footer {
+  clear: left;
+  width: 100%;
+  background-color: yellow;
+}

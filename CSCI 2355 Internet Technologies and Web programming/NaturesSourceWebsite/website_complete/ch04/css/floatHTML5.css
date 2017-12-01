@@ -1,0 +1,30 @@
+/* floatHTML5.css for floatHTML5.html */
+
+body { font-size: 1.5em; }
+
+main {
+  width: 650px;
+  background-color: silver;
+}
+
+header {
+  width: 100%;
+  background-color: aqua;
+}
+
+nav {
+  float: left;
+  width: 35%;
+  background-color: lime;
+}
+
+article {
+  float: left;
+  width: 65%;
+}
+
+footer {
+  clear: left;
+  width: 100%;
+  background-color: yellow;
+}

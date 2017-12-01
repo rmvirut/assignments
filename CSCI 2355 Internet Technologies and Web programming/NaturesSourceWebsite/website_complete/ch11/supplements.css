@@ -1,0 +1,46 @@
+/*supplements.css*/
+
+supplements {
+  background-color: #ffffff;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+vitamin {
+  display: block;
+  margin-top: 10pt;
+  margin-left:0pt;
+}
+
+name {
+  background-color: green;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  padding: 5pt;
+  margin-bottom:3pt;
+  margin-right:0;
+}
+
+price {
+  background-color: lime;
+  color: #000000;
+  font-size: 1.5em;
+  padding:5pt;
+  margin-bottom:3pt;
+  margin-left:0
+}
+
+helps_support {
+  display: block;
+  color: #000000;
+  font-size: 1.2em;
+  padding-top: 3pt;
+  margin-left: 20pt;
+}
+
+daily_requirement {
+  display: block;
+  color: #000000;
+  font-size: 1.2em;
+  margin-left: 20pt;
+}

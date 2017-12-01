@@ -1,0 +1,8 @@
+<!-- sampledata_with_dtd.dtd -->
+<!ELEMENT supplements (vitamin+)>
+<!ELEMENT vitamin (name, price, helps_support, daily_requirement)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT helps_support (#PCDATA)>
+<!ELEMENT daily_requirement (#PCDATA)>
+<!ATTLIST vitamin product_id CDATA #REQUIRED>

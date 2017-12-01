@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- bmi2.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/default.css">
+    <title>Body Mass Index Calculator</title>
+  </head>
+  <body>
+    <main class="BMI">
+      <h4 class="Centered">Body Mass Index Calculator</h4>
+      <p>Body Mass Index (BMI) is used as an indicator of total body fat. In
+      order to calculate your BMI, please input your height and weight.</p>
+      <form id="bmiForm">
+        <table>
+          <tr>
+            <td>Height:</td>
+            <td><input type="text" name="height" size="7"></td>
+            <td>Units:</td>
+            <td><input type="radio" name="heightUnit" value="in"> inches</td>
+            <td><input type="radio" name="heightUnit" value="cm">
+            centimeters</td>
+          </tr>
+          <tr>
+            <td>Weight:</td>
+            <td><input type="text" name="weight" size="7"></td>
+            <td>Units:</td>
+            <td><input type="radio" name="weightUnit" value="lb">
+              pounds</td>
+            <td><input type="radio" name="weightUnit" value="kg">
+              kilograms</td>
+          </tr>
+          <tr>
+            <td colspan="5">Please check here if you want a detailed
+              analysis of your BMI:
+              <input type="checkbox" name="details" value="yes"></td>
+          </tr>
+        </table>
+      </form>
+      <p>Total body fat is correlated to the risk of certain diseases
+      which can be potentially fatal. BMI is valid for both men and women.
+      However, it should only be used as a guideline as it has some
+      limitations. It may overestimate the body fat in muscular persons and
+      underestimate the body fat in persons who have lost muscle mass.</p>
+      <p>More information can be found at the
+      <a href="http://www.nhlbisupport.com/bmi/bmicalc.htm">National
+      Institute of Health</a> website. Our calculator is based on the
+      formula obtained from this site.</p>
+    </main>
+  </body>
+</html>
