@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- TestHTML5FormControls.html -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/default.css">
+  <script src="scripts/modernizr_inputtypes.js"></script>
+  <script>
+      function OutputTestResult(inputType)
+      {
+        if (Modernizr.inputtypes[inputType])
+            document.write("The input control shown below is available " +
+                "in this browser.");
+        else
+            document.write("Your browser does not support this control."
+                + "<br>The control defaults to a simple text box.");
+      }
+  </script>
+  <title>Test HTML 5 Form Controls</title>
+</head>
+
+<body>
+  <main class="FormTest">
+    <h2 class="Centered">Testing HTML 5 Form Controls</h2>
+    <form action="#">
+      <p>This page uses a customized version of the Modernizr
+      feature-detection JavaScript library to show which new HTML 5 form
+      controls are implemented in the browser that you are using to view
+      the page. Study the markup as you experiment with each control, if
+      it is implemented in your browser, and check out any attributes you
+      can modify or add to alter the behavior of that control.</p>
+      <p>The entire page consists of a single form illustrating
+      (or trying to illustrate) those newer HTML 5 form controls.
+      At the time of writing, browser support for these new "widgets"
+      is uneven (some browsers implement a given widget, others don't)
+      and inconsistent (even if two browsers do implement a given widget,
+      they may not look or behave exactly the same in both). The page
+      should therefore be tried in different browsers to see just which
+      controls are actually implemented in which browsers, if any, before
+      using any particular control. Use only those controls that have
+      broad support or that are at least implemented in the browser(s)
+      employed by your user base, should you be so lucky as to have an
+      identifiable user base and know which browser(s) they use.</p>
+      <hr>
+      <script>
+          document.write("Before you begin, here's your browser "
+              + "(\"user agent\") info:" + "<br>" + navigator.userAgent);
+      </script>
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>color</code>:</h4>
+      <script>OutputTestResult("color");</script>
+      <p>Click to choose a color: <input type="color" name="myColor"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>date</code>:</h4>
+      <script>OutputTestResult("date");</script>
+      <p>Click to enter your birthday: <input type="date" name="myBirthday">
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type
+        <code>datetime</code>:</h4>
+      <script>OutputTestResult("datetime");</script>
+      <p>Click to enter your arrival date and time (including time zone):
+        <input type="datetime" name="myArrival"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type 
+        <code>datetime-local</code>:</h4>
+      <script>OutputTestResult("datetime-local");</script>
+      <p>Click to enter your arrival date and time (without time zone):
+        <input type="datetime-local" name="myArrival"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>email</code>:</h4>
+      <script>OutputTestResult("email");</script>
+      <p>Click to enter your e-mail: <input type="email" name="myEmail"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>month</code>:</h4>
+      <script>OutputTestResult("month");</script>
+      <p>Click to enter month and year of your graduation:
+        <input type="month" name="myGraduation"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>number</code>:</h4>
+      <script>OutputTestResult("number");</script>
+      <p>Click to enter a number (integer) from 1 to 10, inclusive:
+        <input type="number" name="myNumber" min="1" max="10"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>range</code>:</h4>
+      <script>OutputTestResult("range");</script>
+      <p>Click to choose a volume from this range of values:
+        3<input type="range" name="myVolume" min="3" max="8">8</p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>search</code>:</h4>
+      <script>OutputTestResult("search");</script>
+      <p>Click to enter a search string:
+        <input type="search" name="mySearchString"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>tel</code>:</h4>
+      <script>OutputTestResult("tel");</script>
+      <p>Click to enter your telephone number:
+        <input type="tel" name="myTelephoneNumber"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>time</code>:</h4>
+      <script>OutputTestResult("time");</script>
+      <p>Click to enter your arrival time:
+        <input type="time" name="myArrivalTime"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>url</code>:</h4>
+      <script>OutputTestResult("url");</script>
+      <p>Click to enter the URL of your home page:
+        <input type="url" name="myURL"></p>
+  
+      <hr>
+      <h4>Trying <code>input</code> element of type <code>week</code>:</h4>
+      <script>OutputTestResult("week");</script>
+      <p>Click to enter the week you would like to take vacation:
+        <input type="week" name="myVactionWeek"></p>
+    </form>
+  </main>
+</body>
+</html>

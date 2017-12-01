@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- sampledata.xml -->
+<supplements>
+  <vitamin product_id="10">
+    <name>Vitamin A</name>
+    <price>$8.99</price>
+    <helps_support>Your eyes</helps_support>
+    <daily_requirement>5000 IU</daily_requirement>
+  </vitamin>
+  <vitamin product_id="20">
+    <name>Vitamin C</name>
+    <price>$11.99</price>
+    <helps_support>Your immune system</helps_support>
+    <daily_requirement>250-400 mg</daily_requirement>
+  </vitamin>
+  <vitamin product_id="30">
+    <name>Vitamin D</name>
+    <price>$3.99</price>
+    <helps_support>Your bones, especially your rate of
+      calcium absorption</helps_support>
+    <daily_requirement>400-800 IU</daily_requirement>
+  </vitamin>
+</supplements>

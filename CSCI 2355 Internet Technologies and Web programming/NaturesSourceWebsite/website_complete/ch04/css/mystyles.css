@@ -1,0 +1,20 @@
+/* mystyles.css for mystyles.html
+A few styles to illustrate the structure and formatting of a
+CSS style file
+*/
+
+/* Styles that apply to every element in the body, unless overridden */
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: large;
+  color: #000;
+  background-color: #FF0; /* yellow */
+}
+
+h1 { color: #00F; } /* Overrides body font color style above */
+
+/* Styles any list item in an unordered list */
+ul li {
+  font-size: medium;  /* Overrides body text font size above */
+  font-style: italic; /* Adds italic style to text of list items */
+}

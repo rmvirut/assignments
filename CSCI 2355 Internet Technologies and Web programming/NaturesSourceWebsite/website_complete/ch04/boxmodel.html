@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- boxmodel.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Box Model</title>
+    <link rel="stylesheet" href="css/boxmodel.css">
+  </head>
+  <body>
+    <div id='outerBox'>
+      <div id='middleBox'>
+        <div id='innerBox'>
+          This figure illustrates the CSS "box model". You are looking at
+          three nested boxes: an outer box, a middle box, and an inner box.
+          All boxes are created by div elements. The inner box is nested
+          within the middle box, and the middle box, in turn, is nested
+          within the outer box. The inner box contains this text and has a
+          white background color (without which the maroon background of the
+          middle box would show through behind the text). This inner box has
+          no padding, border, or margin, which is why the text is immediately
+          adjacent to the top, bottom, and left side of its containing div.
+          The middle box contains the inner box as its content, which is
+          surrounded by 20 pixels of padding, a 20 pixel dashed silver
+          border, and a 20 pixel margin (in that order moving outward).
+          Note that the maroon background color of this middle box is the
+          background of the content and the padding and the border, but not
+          the margin. You can see that it's behind the border because the
+          border is dashed, but it's the yellow background color of the outer
+          box that shows under the margin of the middle box. As we already
+          said, this maroon background is also "behind" the inner box, but
+          you can't see it because of the white background of that inner box.
+          The outer box contains the middle box, with its content, padding,
+          border and margin as its own content, and also has a solid black
+          border 10 pixels wide and a yellow background color, but no padding
+          or margin. Note that the only "complete" box of the three (the only
+          one with all four of content, padding, border, and margin) is the
+          middle box. Make sure you identify all four parts of this box.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
