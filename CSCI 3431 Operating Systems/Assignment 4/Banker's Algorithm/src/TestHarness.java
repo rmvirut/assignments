@@ -112,11 +112,6 @@ public class TestHarness {
                 else // illegal request
                     System.err.println("Must be either 'RQ' or 'RL'");
             }
-
-            System.out.print("We get this far");
-            int p = 500 * 200;
-
-
         }
 
     }

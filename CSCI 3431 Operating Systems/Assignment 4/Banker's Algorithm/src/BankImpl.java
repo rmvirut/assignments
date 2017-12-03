@@ -10,7 +10,7 @@ public class BankImpl implements Bank {
     /**
      * Takes resource types and creates a new instance of the BankImpl
      *
-     * @param initialResources
+     * @param initialResources vector with resources available at start
      */
     public BankImpl(int[] initialResources) {
 
@@ -32,8 +32,12 @@ public class BankImpl implements Bank {
      */
     @Override
     public void addCustomer(int customerNumber, int[] maximumDemand) {
+
         //set max and initialize need to max
         try {
+            if (customerNumber > NUMBER_OF_CUSTOMERS)
+                throw new BankDenialError("You can only add up to " + NUMBER_OF_CUSTOMERS + " customers");
+
 //            verify max is less than available
             if (compareVectors(maximumDemand, available)) {
                 for (int i = 0; i < m; i++) {
@@ -61,40 +65,39 @@ public class BankImpl implements Bank {
     public void getState() {
         System.out.println(printAvailable());
         String tabs = "    ";
-        String line = "Customer";
+        StringBuilder line = new StringBuilder("Customer");
 
         //print labels
         for (int j = 0; j < 3; j++) {
-            line += String.format("%s", tabs);
+            line.append(String.format("%s", tabs));
             for (int i = 0; i < m; i++) {
-                line += String.format("%3s", Character.toString((char) (65 + i)));
+                line.append(String.format("%3s", Character.toString((char) (65 + i))));
             }
         }
         System.out.println(line);
 
         for (int j = 0; j < n; j++) {
-            line = String.format("%3s%d%s", "P", j, tabs);
+            line = new StringBuilder(String.format("%3s%d%s", "P", j, tabs));
             //select a vector j
-            line += String.format("%s", tabs);
+            line.append(String.format("%s", tabs));
             //print allocated vector
             for (int i = 0; i < m; i++) {
-                line += String.format("%3d", allocation[j][i]);
+                line.append(String.format("%3d", allocation[j][i]));
             }
-            line += String.format("%s", tabs);
+            line.append(String.format("%s", tabs));
             //print maximum vector
             for (int i = 0; i < m; i++) {
-                line += String.format("%3d", maximum[j][i]);
+                line.append(String.format("%3d", maximum[j][i]));
             }
             //print need vector
-            line += String.format("%s", tabs);
+            line.append(String.format("%s", tabs));
             for (int i = 0; i < m; i++) {
-                line += String.format("%3d", need[j][i]);
+                line.append(String.format("%3d", need[j][i]));
             }
             System.out.println(line);
-            line = ""; //reset line
         }
 
-        System.out.printf("\nMatrix order: %s%s%s%s%s", "Allocated", tabs, "Maximum", tabs, "Need");
+        System.out.printf("\nMatrix order: %s%s%s%s%s\n", "Allocated", tabs, "Maximum", tabs, "Need");
 
     }
 
@@ -107,23 +110,30 @@ public class BankImpl implements Bank {
      */
     @Override
     public boolean requestResources(int customerNumber, int[] request) {
-        String text = "Customer " + customerNumber + " is requesting ";
-        for (int i : request) {
-            text += i + " ";
-        }
-        text += printAvailable();
 
-        System.out.println(text);
         try {
+
+            if (customerNumber > n) {
+                throw new BankDenialError("This customer does not exist");
+            }
+
+            StringBuilder textBuilder = new StringBuilder("Customer #" + customerNumber + " is requesting ");
+            for (int i : request) {
+                textBuilder.append(i).append(" ");
+            }
+            String text = textBuilder.toString();
+            text += printAvailable();
+
+            System.out.println(text);
+
 //            step 1
             if (!compareVectors(request, need[customerNumber])) {
-                throw new BankDenialError("Requested resources exceeds customer's maximum claim.\nRequest will be denied");
+                throw new BankDenialError("Request exceeds customer's maximum claim.");
             }
 
 //            step 2
             if (!compareVectors(request, available)) {
-                throw new BankDenialError("Reqeusted reserouces exceeds those available. Please wait until the resources" +
-                        " have been released");
+                throw new BankDenialError("Insufficient resources.");
             }
 
 //            step 3
@@ -135,7 +145,7 @@ public class BankImpl implements Bank {
             calNeed();
 
             //check state
-            if (safetyAlgo())
+            if (safeStateCheck())
                 return true;
 
             //reverse the allocation otherwise
@@ -145,13 +155,14 @@ public class BankImpl implements Bank {
             }
             calNeed();
 
-            throw new BankDenialError("Sorry. You request puts the bank at risk. Please try again later");
+            throw new BankDenialError("Sorry. Your request puts the bank at risk. Please try again later");
 
         } catch (BankDenialError e) {
-            System.out.print(e.getMessage());
-        } finally {
-            return false;
+            System.out.println(e.getMessage());
+
         }
+
+        return false;
     }
 
     /**
@@ -164,14 +175,30 @@ public class BankImpl implements Bank {
     public void releaseResources(int customerNumber, int[] release) {
 
         try {
+
+            if (customerNumber > n) {
+                throw new BankDenialError("This customer does not exist");
+            }
+
+            StringBuilder textBuilder = new StringBuilder("Customer #" + customerNumber + " is releasing ");
+            for (int i : release) {
+                textBuilder.append(i).append(" ");
+            }
+            System.out.println(textBuilder.toString());
+
             //are you releasing more than you actually have?
             if (!compareVectors(release, allocation[customerNumber]))
-                throw new BankDenialError("Sorry, you can't release more reseources than you own");
+                throw new BankDenialError("Sorry, you can't release more resources than you own");
 
             for (int i = 0; i < m; i++) {
                 available[i] += release[i];
                 allocation[customerNumber][i] -= release[i];
             }
+            textBuilder = new StringBuilder("Allocated = ");
+            for (int i : release) {
+                textBuilder.append(-i).append(" ");
+            }
+            System.out.println(textBuilder.toString());
 
         } catch (BankDenialError e) {
             System.out.println(e.getMessage());
@@ -180,12 +207,20 @@ public class BankImpl implements Bank {
         }
     }
 
+    /**
+     * Updates the Need vector of a given customer
+     *
+     * @param customerNumber
+     */
     private void updateNeed(int customerNumber) {
         for (int i = 0; i < m; i++) {
             need[customerNumber][i] = maximum[customerNumber][i] - allocation[customerNumber][i];
         }
     }
 
+    /**
+     * Updates the whole need matrix
+     */
     private void calNeed() {
         for (int j = 0; j < n; j++) {
             updateNeed(j);
@@ -197,46 +232,58 @@ public class BankImpl implements Bank {
      * Order of parameters matters!
      * evaluates the expression x[i] =< y[i]
      *
-     * @return true if x is greater, false if y is greater
+     * @return true if x is lesser
      */
     private boolean compareVectors(int[] x, int[] y) {
+        boolean response = true;
         for (int i = 0; i < m; i++) {
-            if (x[i] > y[i])
-                return false;
+            if (x[i] > y[i]) {
+                response = false;
+            }
         }
-        return true;
+        return response;
     }
 
+    /**
+     * Build a string reporting the available resources
+     *
+     * @return string
+     */
     private String printAvailable() {
-        String text = "Available = ";
+        StringBuilder text = new StringBuilder("Available = ");
         for (int i : available)
-            text += i + " ";
-        return text;
+            text.append(i).append(" ");
+        return text.toString();
     }
 
-    private boolean safetyAlgo() {
-
+    /**
+     * Checks the state of the system to see if it's safe
+     *
+     * @return true if state is safe and false otherwise
+     */
+    private boolean safeStateCheck() {
+        boolean safe = true;
+        int safeCust = 0;
         //step 1
         int[] work = new int[m];
         boolean[] finish = new boolean[n];
-        for (int i = 0; i < m; i++) {
-            work[i] = available[i];
-        }
+        System.arraycopy(available, 0, work, 0, m);
         for (boolean b : finish) {
             b = false;
         }
-
-        //step 2
-        for (int i = 0; i < n; i++) {
-            if (finish[i] == false && compareVectors(need[i], work)) {
-                //step 3
-                for (int k = 0; k < work.length; k++) {
-                    work[k] = work[k] + allocation[i][k];
+        while (safeCust < n && safe) {
+            //step 2
+            for (int i = 0; i < n; i++) {
+                if (finish[i] == false && compareVectors(need[i], work)) {
+                    //step 3
+                    for (int k = 0; k < m; k++) {
+                        work[k] = work[k] + allocation[i][k];
+                    }
                     finish[i] = true;
+                    safeCust++;
                 }
             }
         }
-
         //step 4
         for (boolean b : finish) {
             if (!b) {
@@ -246,6 +293,4 @@ public class BankImpl implements Bank {
 
         return true;
     }
-
-
 }

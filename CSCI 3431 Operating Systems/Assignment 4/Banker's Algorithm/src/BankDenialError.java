@@ -1,4 +1,7 @@
-public class BankDenialError extends Exception {
+/**
+ * Custom error class for generating bank errors
+ */
+class BankDenialError extends Error {
 
     /**
      * Constructs a new error with the specified detail message.  The
