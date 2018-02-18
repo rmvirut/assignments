@@ -12,6 +12,7 @@ Author:			Edward Angel (modified by Stephen Brooks)
 
 /* include the library header files */
 #include <freeglut.h>
+#include <glut.h>
 
 
 
