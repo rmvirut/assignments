@@ -34,7 +34,7 @@ public class Profitability {
       //[0] = profit margin
       //[1] = fixed expenses
       //[2] = variable expenses
-      //[3] = profit after analyses
+      //[3] = endBalance after analyses
       busInfo.add(getUserInput(new float[4], busInfo.size()));
       //the last business added isn't invalid
       validBusiness = busInfo.get(busInfo.size() - 1)[0] != -1;
@@ -53,8 +53,13 @@ public class Profitability {
     }
     // print result prompts for most profitable
     int mostProfitable = findMostProf(busInfo);
-    System.out.printf("%s %d %s %f", "The most profitable business is number",
-    mostProfitable, "with overall profit = ", busInfo.get(mostProfitable)[3] - invCap);
+    //find the most profitable by analysing the previously generated financial information on the business
+    System.out.printf("%s %d %s %f", "The most profitable business is number", mostProfitable, "with overall profit = ",
+        busInfo.get(mostProfitable)[3] - invCap);
+
+    System.out.printf(
+        "It will achieve/exceed 100%% ROI in Year %d, with a total ending balance at the end of Year %d = %.2f\n",
+        findROIYr(busInfo.get(mostProfitable), invCap), numYears, busInfo.get(mostProfitable)[3]);
   }
 
   /**
@@ -65,7 +70,7 @@ public class Profitability {
    */
   public static float[] getUserInput(float b[], int busNum) {
     // iterate through prompts and return array
-    for (int i = 0; i < b.length-1; i++) {
+    for (int i = 0; i < b.length - 1; i++) {
       System.out.printf("\n%s%d: ", prompts[i], busNum);
       b[i] = in.nextFloat();
     }
@@ -73,7 +78,11 @@ public class Profitability {
   }
 
   /**
-   *
+   * 
+   * 
+   * @param business
+   * @param cap
+   * @param yrs
    */
   public static void calBusFinNums(float business[], float cap, int yrs) {
     float gross = 0;
@@ -82,46 +91,43 @@ public class Profitability {
     for (int i = 0; i < yrs; i++) {
       System.out.printf("%s%d%s\n", "Year: ", i, " analysis");
       System.out.printf("%s%.2f\n", "Gross Profit: ", gross = cap * business[0]);//update gross profit
-      System.out.printf("%s%.2f\n", "Net Profit: ", net = gross - business[1] -(business[2] * cap));//update netprofit
+      System.out.printf("%s%.2f\n", "Net Profit: ", net = gross - business[1] - (business[2] * cap));//update netprofit
       System.out.printf("%s%.2f\n", "End balance: ", cap += net);//endBalance  = updated investment Cap
     }
 
-    //store total profit/ending balance
+    //store ending balance
     business[3] = cap;
   }
 
   /**
-   *
+   * @param business
+   * @param cap
    */
-  public static void calBusYrNums() {
+  public static int findROIYr(float[] business, float cap) {
+    float gross = 0, net = 0, sumNet = 0;
+    int years = 0;
 
+    while ((sumNet / cap) < 1) {
+      gross = cap * business[0];
+      net = gross - business[1] - (business[2] * cap);
+      sumNet += net;
+      years++;
+    }
+
+    return years;
   }
 
   /**
-   *
-   */
-  public static void findROIYr() {
-
-  }
-
-  /**
-   *  Finds the most profitable business amongst the given array list
-   *
+   * Finds the most profitable business amongst the given array list
+   * @param busInfo
    */
   public static int findMostProf(ArrayList<float[]> busInfo) {
     int winner = 0;
-    for(int i = 0; i < busInfo.size() - 1;i++){
-      if(busInfo.get(i)[3] < busInfo.get(i+1)[3]){
+    for (int i = 0; i < busInfo.size() - 1; i++) {
+      if (busInfo.get(i)[3] < busInfo.get(i + 1)[3]) {
         winner = i;
       }
     }
     return winner;
-  }
-
-  /**
-   *
-   */
-  public static void printResults() {
-
   }
 }
