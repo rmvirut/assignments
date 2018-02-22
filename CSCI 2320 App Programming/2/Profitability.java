@@ -4,8 +4,7 @@ import java.lang.*;
 
 public class Profitability {
 
-  // static variables
-
+  //static variables
   static final String[] prompts = { "Please enter the profit margin (%) for the business #",
       "Please enter the annual fixed expenses for business #",
       "Please enter the annual variable expenses for business #" };
@@ -18,7 +17,7 @@ public class Profitability {
     float invCap = 0; //initial investment capital
     ArrayList<float[]> busInfo = new ArrayList<float[]>(); //information on businesses
 
-    boolean validBusiness = true;
+    
 
     // Program intro
     System.out.printf("%s\n", "Profitability has started. Enter the values and -1 when you're ready to proceed.");
@@ -29,6 +28,9 @@ public class Profitability {
     System.out.printf("%s", "Please enter the initial Investment Capital: ");
     invCap = in.nextFloat();
 
+    //condition for invalid business is if the last array is {-1, -1, -1, 0}
+    boolean validBusiness = true;
+
     // Prompt user for business info
     do {
       //[0] = profit margin
@@ -36,12 +38,12 @@ public class Profitability {
       //[2] = variable expenses
       //[3] = endBalance after analyses
       busInfo.add(getUserInput(new float[4], busInfo.size()));
-      //the last business added isn't invalid
-      validBusiness = busInfo.get(busInfo.size() - 1)[0] != -1;
-    } while (validBusiness);
+     
+      validBusiness = busInfo.get(busInfo.size() - 1)[0] != -1 && busInfo.get(busInfo.size() - 1)[1] != -1 && busInfo.get(busInfo.size() - 1)[2] != -1;
+    } while (validBusiness);//end do-while
 
-    //remove the last busines (invalid info)
-    busInfo.remove(busInfo.size() - 1);
+    in.close();//close input stream
+    busInfo.remove(busInfo.size() - 1);//remove the last/invalid business
 
     // Evaluate businesses one at a time
     for (int i = 0; i < busInfo.size(); i++) {
@@ -54,8 +56,8 @@ public class Profitability {
     // print result prompts for most profitable
     int mostProfitable = findMostProf(busInfo);
     //find the most profitable by analysing the previously generated financial information on the business
-    System.out.printf("%s %d %s %f", "The most profitable business is number", mostProfitable, "with overall profit = ",
-        busInfo.get(mostProfitable)[3] - invCap);
+    System.out.printf("%s %d %s %.2f\n", "The most profitable business is number", mostProfitable,
+        "with overall profit = ", busInfo.get(mostProfitable)[3] - invCap);
 
     System.out.printf(
         "It will achieve/exceed 100%% ROI in Year %d, with a total ending balance at the end of Year %d = %.2f\n",
@@ -64,9 +66,10 @@ public class Profitability {
 
   /**
    * This method prompts the user to enter information for the businesses
-   *
-   * @param float b [] empty float array of size 3 passed by reference;
+   * 
+   * @param float [4] b reference to newly created float array of size 4 passed * by reference to the function
    * @param int   busNum represents the number of businesses;
+   * @return [4] b returns the reference to the updated array     
    */
   public static float[] getUserInput(float b[], int busNum) {
     // iterate through prompts and return array
@@ -78,11 +81,13 @@ public class Profitability {
   }
 
   /**
-   * 
-   * 
-   * @param business
-   * @param cap
-   * @param yrs
+   * Performs and reports the financial analysises on a business
+   * achieve
+   * @param float [] business array containng the information about the
+   * business in this order index [0] = profit margin, [1] = fixed expense,
+   * [2] = variable expense and [3] = endBalance
+   * @param float cap initial investment capital of the business
+   * @param int yrs the number of years to analyse the business
    */
   public static void calBusFinNums(float business[], float cap, int yrs) {
     float gross = 0;
@@ -94,14 +99,19 @@ public class Profitability {
       System.out.printf("%s%.2f\n", "Net Profit: ", net = gross - business[1] - (business[2] * cap));//update netprofit
       System.out.printf("%s%.2f\n", "End balance: ", cap += net);//endBalance  = updated investment Cap
     }
-
     //store ending balance
     business[3] = cap;
   }
 
   /**
-   * @param business
-   * @param cap
+   * Takes the information for a single businesses and calculates the number of
+   * years it takes to reach 100% ROI.
+   * achievegist
+   * @param float [] business array containng the information about the
+   * business in this order index [0] = profit margin, [1] = fixed expense,
+   * [2] = variable expense and [3] = endBalance
+   * @param float cap initial investment capital for the business
+   * @return int years number of years it took to reach 100% ROI
    */
   public static int findROIYr(float[] business, float cap) {
     float gross = 0, net = 0, sumNet = 0;
@@ -118,8 +128,11 @@ public class Profitability {
   }
 
   /**
-   * Finds the most profitable business amongst the given array list
+   * Finds the most profitable business amongst the given array list by
+   * coparing the values in the last index, [3] = end balance i.e investment
+   * capital + total net profit at the end of the given years
    * @param busInfo
+   * @return int winner the index of the business with the largest end balance
    */
   public static int findMostProf(ArrayList<float[]> busInfo) {
     int winner = 0;
