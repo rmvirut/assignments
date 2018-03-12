@@ -1,91 +1,68 @@
 #include <stdlib.h>
 #include <GL\freeglut.h>
 #include <GL\glut.h>
+#include <cmath>
 
+float PI = 3.14159265;
 
+float DEG_TO_RAD = PI / 180.0;
+
+GLfloat theta = 0;
+
+//{{sun}, {mercury}, {venus}, {earth}, {moon}, 
+//{mars}, {jupiter}, {saturn}, {uranus}, {neptune}, {pluto}}
+
+GLfloat planetColors[][3] = { { 0.99, 0.71, 0.08 }, { 1, 0.63, 0.42 }, { 0.99, 0.84, 0.61 }, { 0.0, 0.41, 0.55 },
+{1,1,1}, { 0.55, 0, 0 }, { 0.93, 0.90, 0.87 }, { 0.93, 0.91, 0.75 }, { 0.69, 0.92, 0.92 }, { 0.61, 0.77, 0.89 }, { 0.99, 0.71, 0.08 } };
+
+//planet start points
+GLfloat planetPoints[][3] = { {0,0,0}, {0.15, 0, 0}, { 0.10, 0, 0 }, {0.125, 0, 0 }, { 0.135, 0, 0 },
+{ 0.175, 0, 0 }, {0.235, 0, 0 }, { 0.315, 0, 0 }, {0.38, 0, 0 }, {0.43, 0, 0 }, {0.49, 0, 0 } };
+
+GLfloat planetSizes[] = { 0.11, 0.015, 0.022, 0.027, 0.015, 0.02, 0.06, 0.050, 0.03, 0.0225 , 0.075 };
+
+GLfloat orbitAngles[] = {0, 4.7, 3.5, 2.9, 2.4, 1.3, 1.0, 0.7, 0.54, 0.47};
+
+GLboolean orbits = true;
 
 void planets() {
+	glLoadIdentity();
+	//draw sun
+	glColor3fv(planetColors[0]);
+	//glPushMatrix();
+	glutWireSphere(0.1, 100, 100);
+	//glPopMatrix();
+	//glLoadIdentity();
+	for (int i = 1; i < 10; i++) {
+		GLfloat x = planetPoints[i][0]; //x co-ordinate
+		GLfloat y = planetPoints[i][1]; 
+		GLfloat z = planetPoints[i][2]; //z co-ordinate
+
+		GLfloat radius = sqrtf((x*x) + (z*z)); //radius
+
+		x = (float)(radius * cos((theta + orbitAngles[i]) * DEG_TO_RAD));
+		z = (float)(radius * sin((theta + orbitAngles[i]) * DEG_TO_RAD));
+
+		glColor3fv(planetColors[i]);
+		glLoadIdentity();
+		//glPushMatrix();
+		glTranslatef(x, y, z);
+		glutWireSphere(planetSizes[i], 100, 100);
+		//glPopMatrix();
+		
+	}
 	
-	//Draw the Sun
-	glColor3f(0.99, 0.71, 0.08);
-	GLUquadric *sun;
-	sun = gluNewQuadric();
-	glTranslatef(0, 0, 0);
-	gluSphere(sun, 0.11, 100, 100);
-
-	//mercury
-	glColor3f(0.98, 0.63, 0.42);
-	GLUquadric *hg;
-	hg = gluNewQuadric();
-	glTranslatef(0.16/2, 0, 0);
-	gluSphere(hg, 0.015, 100, 100);
-
-	//venus
-	glColor3f(0.99, 0.84, 0.61);
-	GLUquadric *venus;
-	venus = gluNewQuadric();
-	glTranslatef(0.20/2, 0, 0);
-	gluSphere(venus, 0.022, 100, 100);
-
-	//earth
-	glColor3f(0.0, 0.41, 0.55);
-	GLUquadric *earth;
-	earth = gluNewQuadric();
-	glTranslatef(0.25/2, 0, 0);
-	gluSphere(earth, 0.027, 100, 100);
-
-	//Earth's moon
-	glColor3f(0.0, 0.41, 0.55);
-	GLUquadric *moon;
-	moon = gluNewQuadric();
-	glTranslatef(0.27 / 2, 0, 0);
-	gluSphere(moon, 0.01, 100, 100);
-
-	//mars
-	glColor3f(0.55, 0, 0);
-	GLUquadric *mars;
-	mars = gluNewQuadric();
-	glTranslatef(0.35/2, 0, 0);
-	gluSphere(mars, 0.015, 100, 100);
-
-	//jupiter
-	glColor3f(0.93, 0.90, 0.87);
-	GLUquadric *jupiter;
-	jupiter = gluNewQuadric();
-	glTranslatef(0.47/2, 0, 0);
-	gluSphere(jupiter, 0.06, 100, 100);
-	
-	//saturn
-	glColor3f(0.93, 0.91, 0.75);
-	GLUquadric *saturn;
-	saturn = gluNewQuadric();
-	glTranslatef(0.63/2, 0, 0);
-	gluSphere(saturn, 0.05, 100, 100);
-	
-	//uranus
-	glColor3f(0.69, 0.92, 0.92);
-	GLUquadric *uranus;
-	uranus = gluNewQuadric();
-	glTranslatef(0.76/2, 0, 0);
-	gluSphere(uranus, 0.03, 100, 100);
-	
-	//neptune
-	glColor3f(0.61, 0.77, 0.89);
-	GLUquadric *neptune;
-	neptune = gluNewQuadric();
-	glTranslatef(0.86/2, 0, 0);
-	gluSphere(neptune, 0.0225, 100, 100);
-	
-	//pluto
-	glColor3f(0.99, 0.71, 0.08);
-	GLUquadric *pluto;
-	pluto = gluNewQuadric();
-	glTranslatef(0.98/2, 0, 0);
-	gluSphere(pluto, 0.075, 100, 100);
 }
 
 void myIdle() {
-	//does nothing now
+	//update rotation
+	theta += 1;
+
+	if (theta >= 360.0) {
+		theta -= 360;
+	}
+
+	glutPostRedisplay();
 }
 
 void display() {
@@ -94,6 +71,18 @@ void display() {
 	glLoadIdentity();
 	planets();
 
+	/*
+	if (orbits) {
+		GLfloat radius = sqrtf((x*x) + (z*z));
+		glColor3f(1, 1, 1);
+		glBegin(GL_LINE_LOOP);
+
+		for (int theta = 0; theta < 360; ++theta) {
+			glVertex3f(radius * cos(theta), 0, radius*sin(theta));
+		}
+		glEnd;
+	}
+	*/
 	glFlush();
 }
 
@@ -106,7 +95,7 @@ void initializeGL(void) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	// use 3d
-	glOrtho(-2.0, 2.0, -1.0, 1.0, 1.0, -1.0);
+	glOrtho(-2.0, 2.0, -1.0, 1.0, 5.0, -5.0);
 	// now change matrix mode to allow re-positioning
 	glMatrixMode(GL_MODELVIEW);
 }
@@ -133,6 +122,4 @@ void main(int argc, char** argv) {
 	glutIdleFunc(myIdle);
 	//start even loop
 	glutMainLoop();
-
 }
-
