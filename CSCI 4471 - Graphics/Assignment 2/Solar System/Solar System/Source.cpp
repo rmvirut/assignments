@@ -102,7 +102,6 @@ void initializeGL(void) {
 
 
 void main(int argc, char** argv) {
-
 	//initialize
 	glutInit(&argc, argv);
 	//display mode
