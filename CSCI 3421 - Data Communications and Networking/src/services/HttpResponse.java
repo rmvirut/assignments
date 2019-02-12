@@ -13,11 +13,11 @@ public class HttpResponse {
     /**
      * Parses the buffered reader to create a new HttpResponse object
      *
-     * @param r input stream containg response from server
+     * @param r input stream containing response from server
      */
     public HttpResponse(BufferedReader r) throws IOException {
         responseHeaders = new ArrayList<String>();
-//        parseBuffer(r);
+        //parseBuffer(r);
 
         responseMessage = r.readLine();//read firstline and assing to message variable
 
@@ -30,7 +30,7 @@ public class HttpResponse {
         r.close();
     }
 
-    //    private void parseBuffer(BufferedReader r) throws IOException {
+    //private void parseBuffer(BufferedReader r) throws IOException {
 //        responseMessage = r.readLine();//read firstline and assing to message variable
 //
 //        String text = "";

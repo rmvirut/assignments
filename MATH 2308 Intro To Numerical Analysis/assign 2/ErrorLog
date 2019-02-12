@@ -1,0 +1,10 @@
+F:\Projects\assignments\MATH 2308 Intro To Numerical Analysis\assign 2\LASimpleDrivetest.F95(24) : warning 197 - Variable RCOND has been declared but not used
+F:\Projects\assignments\MATH 2308 Intro To Numerical Analysis\assign 2\LASimpleDrivetest.F95(26) : warning 197 - Variable IWORK has been declared but not used
+WARNING the following symbols are missing:
+SLANGE                                   F:\Projects\assignments\MATH 2308 Intro To Numerical Analysis\assign 2\lgotemp@.obj
+                                              (F:\PROJECTS\ASSIGNMENTS\MATH 2308 INTRO TO NUMERICAL ANALYSIS\ASSIGN 2\LASIMPLEDRIVETEST.F95)
+SGETRS                                   F:\Projects\assignments\MATH 2308 Intro To Numerical Analysis\assign 2\lgotemp@.obj
+                                              (F:\PROJECTS\ASSIGNMENTS\MATH 2308 INTRO TO NUMERICAL ANALYSIS\ASSIGN 2\LASIMPLEDRIVETEST.F95)
+SGETRF                                   F:\Projects\assignments\MATH 2308 Intro To Numerical Analysis\assign 2\lgotemp@.obj
+                                              (F:\PROJECTS\ASSIGNMENTS\MATH 2308 INTRO TO NUMERICAL ANALYSIS\ASSIGN 2\LASIMPLEDRIVETEST.F95)
+Creating executable: F:\Projects\assignments\MATH 2308 Intro To Numerical Analysis\assign 2\LASimpleDrivetest.EXE
