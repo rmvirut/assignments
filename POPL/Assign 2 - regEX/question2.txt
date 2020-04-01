@@ -1,3 +1,0 @@
-<expr>::= <expr>(+|-)<expr>, <term>/<term>, <term>*<term>, <expr>
-<term>::= <var>|const, <term>
-<var>::= a | b | c | d | e

@@ -1,5 +1,0 @@
-Puzzle class {
-
-    
-
-}
